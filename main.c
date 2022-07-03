@@ -485,16 +485,16 @@ void lista_add_encomenda(PEDIDO * pedido, char * pedido_remetente, char * pedido
 PEDIDO lista_excluir_encomenda()
 {
     PEDIDO encomenda;
-    if (inicio != NULL)
+    if (inicio != NULL)           //lista nao está vazia
     {
         ENCOMENDA * lixo = inicio;
-        inicio = inicio->prox;
+        inicio = inicio->prox;           
         encomenda.pedido_id = lixo->pEncomenda->pedido_id;
         printf("\n\n excluido \n");
         printf("Aluno: %s\n", lixo->pEncomenda->pedido_nome_aluno);
         free(lixo);
         lista_tamanho--;
-        if (lista_tamanho == 1)
+        if (lista_tamanho == 1) 
         {
             fim = NULL;
         }
